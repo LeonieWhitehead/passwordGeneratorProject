@@ -100,20 +100,30 @@ Special characters ($@%&*, etc)
 Code should validate for each input and at least one character type should be selected
 Once prompts are answered then the password should be generated and displayed in an alert or written to the page*/
 
-//create prompt messages
- prompt('How many characters would you like your password to contain?');
+// 1. create prompt messages
 
-prompt('Click OK to confirm or cancel to decline lower case characters');
-
-prompt('Click OK to confirm or cancel to decline upper case characters');
-
-prompt('Click OK to confirm or cancel to decline numeric characters');
-
-prompt('Click OK to confirm or cancel to decline special characters');
+// window.confirm('Click OK to confirm or cancel to decline lower case characters');
+// window.confirm('Click OK to confirm or cancel to decline upper case characters');
+// window.confirm('Click OK to confirm or cancel to decline numeric characters');
+// window.confirm('Click OK to confirm or cancel to decline special characters');
+// 2. validate input
+// 3. generate criteria
+// 4. display password on page
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  let passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)')
+  console.log()
+  if(passwordLength <8) {
+    alert('Not enough characters, please try again!')
+  }
+  if(passwordLength >128) {
+    alert('Too many characters, please try again!')
+  }
 
+
+  let passwordOptions = 
+// var passwordOptions = getPasswordOptions();
 }
 
 // Function for getting a random element from an array
@@ -124,6 +134,8 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
 
+  
+return "";
 }
 
 // Get references to the #generate element
@@ -139,3 +151,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+console.log('you clicked the button');
