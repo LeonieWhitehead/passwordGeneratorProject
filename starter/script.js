@@ -108,7 +108,7 @@ function getPasswordOptions() {
   // multiple conditions in one. Greater than and equal to, to put in one if statement?
 
   console.log()
-  if(passwordLength <8 && 128) {
+  if(isNaN(passwordLength) < passwordLength < 8 || passwordLength> 128) {
     alert('Password must be between 8 and 128 characters. Please try again!');
     return null;
   }
