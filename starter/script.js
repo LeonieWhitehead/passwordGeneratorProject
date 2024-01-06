@@ -87,51 +87,63 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-/*Generate a password when the button is clicked
-Present a series of prompts for password criteria
-Length of password
-At least 8 characters but no more than 128.
-Character types
-Lowercase
-Uppercase
-Numeric
-Special characters ($@%&*, etc)
-
-Code should validate for each input and at least one character type should be selected
-Once prompts are answered then the password should be generated and displayed in an alert or written to the page*/
 
 // 1. create prompt messages
-let passwordLength
+// 2. create variables for each prompt option
+
+let passwordLength;
+
+// let passwordUpper;
+// let passwordNumeric;
+// let passwordSpecial;
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+
   passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)');
+  //turn password length into number?
+  passwordLength = parseInt(passwordLength);
+
+  // multiple conditions in one. Greater than and equal to, to put in one if statement?
+
   console.log()
-  if(passwordLength <8) {
-    alert('Not enough characters, please try again!');
-    // return;
+  if(passwordLength <8 && 128) {
+    alert('Password must be between 8 and 128 characters. Please try again!');
+    return null;
   }
-  if(passwordLength >128) {
-    alert('Too many characters, please try again!');
-    // return;
+  let passwordOpts = {
+    length: passwordLength,
+    lower: passwordLower,
+    upper: passwordUpper,
+    numeric: passwordNumeric,
+    special: passwordSpecial,
+  };
+  
   }
 
-  console.log(passwordLength);
+    //need window confirm name to call info?
+    let passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
+    console.log('yes')
 
-  //need window confirm name to call info?
-  let passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
-  // console.log()
   // if(passwordLower == true){
   let passwordUpper = window.confirm('Click OK to confirm or cancel to decline upper case characters');
+  console.log('yes')
 
   let passwordNumeric = window.confirm('Click OK to confirm or cancel to decline numeric characters');
+  console.log('yes')
 
   let passwordSpecial = window.confirm('Click OK to confirm or cancel to decline special characters');
-  }
+  console.log('yes')
+
+  //need if statement confirms or cancels?
 
   //object for password options? All choices organised in one section, easier to call?
-  let passwordOptions = {
-    length: passwordLength,
-  }
+
+
+
+  // return passwordOpts;
+  
 
 // let passwordOptions = getPasswordOptions();
 // console.log(passwordOptions);
@@ -162,4 +174,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-console.log('you clicked the button');
