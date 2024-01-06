@@ -92,11 +92,13 @@ var upperCasedCharacters = [
 // 2. create variables for each prompt option
 
 let passwordLength;
+let passwordLower;
+let passwordUpper;
+let passwordNumeric;
+let passwordSpecial;
 
-// let passwordUpper;
-// let passwordNumeric;
-// let passwordSpecial;
-
+// create variable for random item
+// let randomItem
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -106,33 +108,29 @@ function getPasswordOptions() {
   passwordLength = parseInt(passwordLength);
 
   // multiple conditions in one. Greater than and equal to, to put in one if statement?
-
-  console.log()
-  if(isNaN(passwordLength) < passwordLength < 8 || passwordLength> 128) {
+  if(isNaN(passwordLength) || passwordLength < 8 || passwordLength> 128) {
     alert('Password must be between 8 and 128 characters. Please try again!');
     return null;
   }
-  
-  }
 
     //need window confirm name to call info?
-    let passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
-    console.log('yes')
+    passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
+    console.log('yes');
 
   // if(passwordLower == true){
-  let passwordUpper = window.confirm('Click OK to confirm or cancel to decline upper case characters');
-  console.log('yes')
+  passwordUpper = window.confirm('Click OK to confirm or cancel to decline upper case characters');
+  console.log('yes');
 
-  let passwordNumeric = window.confirm('Click OK to confirm or cancel to decline numeric characters');
-  console.log('yes')
+  passwordNumeric = window.confirm('Click OK to confirm or cancel to decline numeric characters');
+  console.log('yes');
 
-  let passwordSpecial = window.confirm('Click OK to confirm or cancel to decline special characters');
-  console.log('yes')
+  passwordSpecial = window.confirm('Click OK to confirm or cancel to decline special characters');
+  console.log('yes');
 
   //need if statement confirms or cancels?
 
   //object for password options? All choices organised in one section, easier to call?
-  
+
   let passwordOpts = {
     length: passwordLength,
     lower: passwordLower,
@@ -142,16 +140,17 @@ function getPasswordOptions() {
   };
 
 
-  // return passwordOpts;
+  return passwordOpts;
   
-
+}
 // let passwordOptions = getPasswordOptions();
 // console.log(passwordOptions);
 
 
-// Function for getting a random element from an array
+// Function for getting a random element from an array. Use .length to go through whole array.
 function getRandom(arr) {
-
+  let randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 }
 
 // Function to generate password with user input
