@@ -101,24 +101,24 @@ Code should validate for each input and at least one character type should be se
 Once prompts are answered then the password should be generated and displayed in an alert or written to the page*/
 
 // 1. create prompt messages
-
+let passwordLength
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)');
+  passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)');
   console.log()
   if(passwordLength <8) {
     alert('Not enough characters, please try again!');
-    return;
+    // return;
   }
   if(passwordLength >128) {
     alert('Too many characters, please try again!');
-    return;
+    // return;
   }
 
   console.log(passwordLength);
 
   //need window confirm name to call info?
-  let passwordLower = Window.confirm('Click OK to confirm or cancel to decline lower case characters');
+  let passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
   // console.log()
   // if(passwordLower == true){
   let passwordUpper = window.confirm('Click OK to confirm or cancel to decline upper case characters');
@@ -128,10 +128,14 @@ function getPasswordOptions() {
   let passwordSpecial = window.confirm('Click OK to confirm or cancel to decline special characters');
   }
 
+  //object for password options? All choices organised in one section, easier to call?
+  let passwordOptions = {
+    length: passwordLength,
+  }
 
-let passwordOptions = getPasswordOptions();
-console.log(passwordOptions);
-}
+// let passwordOptions = getPasswordOptions();
+// console.log(passwordOptions);
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
