@@ -102,27 +102,34 @@ Once prompts are answered then the password should be generated and displayed in
 
 // 1. create prompt messages
 
-// window.confirm('Click OK to confirm or cancel to decline lower case characters');
-// window.confirm('Click OK to confirm or cancel to decline upper case characters');
-// window.confirm('Click OK to confirm or cancel to decline numeric characters');
-// window.confirm('Click OK to confirm or cancel to decline special characters');
-// 2. validate input
-// 3. generate criteria
-// 4. display password on page
+// 
+
+
+
+// 
+
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)')
+  let passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)');
   console.log()
   if(passwordLength <8) {
-    alert('Not enough characters, please try again!')
+    alert('Not enough characters, please try again!');
   }
   if(passwordLength >128) {
-    alert('Too many characters, please try again!')
+    alert('Too many characters, please try again!');
+  }
+  let passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
+  // console.log()
+  // if(passwordLower == true){
+  let passwordUpper = window.confirm('Click OK to confirm or cancel to decline upper case characters');
+
+  let passwordNumeric = window.confirm('Click OK to confirm or cancel to decline numeric characters');
+
+  let passwordSpecial = window.confirm('Click OK to confirm or cancel to decline special characters');
   }
 
-
-  let passwordOptions = 
+  // let passwordOptions = 
 // var passwordOptions = getPasswordOptions();
 }
 
@@ -135,7 +142,7 @@ function getRandom(arr) {
 function generatePassword() {
 
   
-return "";
+return "ThisIsYourPassword1111";
 }
 
 // Get references to the #generate element
