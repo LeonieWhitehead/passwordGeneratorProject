@@ -112,13 +112,6 @@ function getPasswordOptions() {
     alert('Password must be between 8 and 128 characters. Please try again!');
     return null;
   }
-  let passwordOpts = {
-    length: passwordLength,
-    lower: passwordLower,
-    upper: passwordUpper,
-    numeric: passwordNumeric,
-    special: passwordSpecial,
-  };
   
   }
 
@@ -139,7 +132,14 @@ function getPasswordOptions() {
   //need if statement confirms or cancels?
 
   //object for password options? All choices organised in one section, easier to call?
-
+  
+  let passwordOpts = {
+    length: passwordLength,
+    lower: passwordLower,
+    upper: passwordUpper,
+    numeric: passwordNumeric,
+    special: passwordSpecial,
+  };
 
 
   // return passwordOpts;
