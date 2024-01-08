@@ -97,57 +97,82 @@ let passwordUpper;
 let passwordNumeric;
 let passwordSpecial;
 
-// create variable for random item
-// let randomItem
-
 // Function to prompt user for password options
 function getPasswordOptions() {
 
   passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)');
+
+  if (passwordLength === null) {
+    alert('Password cancelled. Please try again!');
+  }
   //turn password length into number?
   passwordLength = parseInt(passwordLength);
 
   // multiple conditions in one. Greater than and equal to, to put in one if statement?
   if(isNaN(passwordLength) || passwordLength < 8 || passwordLength> 128) {
     alert('Password must be between 8 and 128 characters. Please try again!');
-    return null;
+    
+    return passwordLength; 
+    // How to make prompt pop up until correct amount of characters input? else statement? Can you return a prompt? for loop?
+    // while(isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    //    passwordLength = prompt('How many characters would you like your password to contain? (8 - 128)');
+    //    passwordLength = parseInt(passwordLength);
+    // }
+    // while (isNaN(passwordLength) || passwordLength < 8 || passwordLength> 128) {
+    //   alert('Password must be between 8 and 128 characters. Please try again!');
   }
 
-    //need window confirm name to call info?
-    passwordLower = window.confirm('Click OK to confirm or cancel to decline lower case characters');
-    console.log('yes');
+  //need if statement for confirms or cancels?
+    passwordLower = confirm('Click OK to confirm or cancel to decline lower case characters');
+  //   if(passwordLower === true){
+  //   console.log('yes');
+  // } else if(passwordLower === false);{
+  //   console.log('no');
+  // }
 
   // if(passwordLower == true){
-  passwordUpper = window.confirm('Click OK to confirm or cancel to decline upper case characters');
-  console.log('yes');
+  passwordUpper = confirm('Click OK to confirm or cancel to decline upper case characters');
+  // if(passwordUpper === true){
+  //   console.log('yes');
+  // } else(passwordUpper === false);{
+  //   console.log('no');
+  // }
 
-  passwordNumeric = window.confirm('Click OK to confirm or cancel to decline numeric characters');
-  console.log('yes');
+  passwordNumeric = confirm('Click OK to confirm or cancel to decline numeric characters');
+  // if(passwordNumeric === true){
+  //   console.log('yes');
+  // } else(passwordNumeric === false);{
+  //   console.log('no');
+  // }
 
   passwordSpecial = window.confirm('Click OK to confirm or cancel to decline special characters');
-  console.log('yes');
+  // if(passwordSpecial === true){
+  //   console.log('yes');
+  // } else(passwordSpecial === false);{
+  //   console.log('no');
+  // }
 
-  //need if statement confirms or cancels?
+  //if statement in one line?
 
   //object for password options? All choices organised in one section, easier to call?
 
-  let passwordOpts = {
-    length: passwordLength,
-    lower: passwordLower,
-    upper: passwordUpper,
-    numeric: passwordNumeric,
-    special: passwordSpecial,
+  let passwordOptions = {
+    passwordLength: length,
+    passwordLower: lower,
+    passwordUpper: upper,
+    passwordNumeric: numeric,
+    passwordSpecial: special
   };
 
 
-  return passwordOpts;
+  return passwordOptions;
   
 }
-// let passwordOptions = getPasswordOptions();
-// console.log(passwordOptions);
+ let passwordOptions = getPasswordOptions();
+console.log(passwordOptions);
 
 
-// Function for getting a random element from an array. Use .length to go through whole array.
+// Function for getting a random element from an array. Use .length to go through whole array. Create variable for random index
 function getRandom(arr) {
   let randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
@@ -155,9 +180,19 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+getPasswordOptions ();
+
+if (getPasswordOptions.lower) ;
+if (getPasswordOptions.upper) ;
+if (getPasswordOptions.numeric);
+if (getPasswordOptions.special);
+
+for (let i = 0; i < getPasswordOptions.length; i++) {
+  
+}
 
   
-return "ThisIsYourPassword1111";
+return "";
 }
 
 // Get references to the #generate element
