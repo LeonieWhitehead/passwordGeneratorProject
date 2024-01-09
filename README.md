@@ -16,7 +16,7 @@ confirm character types
 https://leoniewhitehead.github.io/passwordGeneratorProject/
 
 ## Screenshot
-screenshot to go here
+(https://github.com/LeonieWhitehead/passwordGeneratorProject/blob/main/assets/leoniewhitehead.github.io_passwordGeneratorProject_.png?raw=true)
 
 ## Resources/contributions
 
