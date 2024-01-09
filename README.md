@@ -15,7 +15,7 @@ This web application allows users to generate a random password based on their s
 - confirm character types
 
 ## Deployment
-
+https://leoniewhitehead.github.io/passwordGeneratorProject/
 
 ## Screenshot
 
