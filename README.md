@@ -33,6 +33,8 @@ passwordLength = parseInt(prompt code was from TA - Kayvon
 
   https://www.youtube.com/watch?v=1cdXwYEFDAg
 
+  edX Xpert Learning assistant - declaring variable inside/outside of functions (scope)
+
 ## License
 
 This project is licensed under the MIT License.
